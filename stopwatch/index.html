@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+
+    <title>JS Stopwatch</title>
+</head>
+<body>
+    <div class="container">
+         
+        <div id="timer">
+            <svg width="260" height="260">
+                <circle class="defaultCircle" cx='125' cy='125' r='120' stroke='#162b8b' 
+                stroke-width="10" fill="none" stroke-linecap="round"/>
+            </svg>
+            <span id="hour">00</span> :
+            <span id="min">00</span> :
+            <span id="sec">00</span>
+        </div>
+        <!-- <p>Time Starts Here</p> -->
+        <div class="buttons">
+            <a href="javascript:void(0)" id="play">
+                <i class="fa fa-play"></i>
+            </a>
+            <a href="javascript:void(0)" id="stop">
+                <i class="fa fa-stop"></i> Stop
+            </a>
+            <a href="javascript:void(0)" id="reset">
+                <i class="fa fa-undo"></i>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
