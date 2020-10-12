@@ -6,7 +6,7 @@
 
 body {
     font-family: "Poppins", sans-serif;
-    background: linear-gradient(to left, #4e4c55, #2552a5);
+    background: linear-gradient(to left, #000046,#1cb5e0);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,11 @@ body {
 }
 
 .container {
-    display: inline-block;
+    /* display: inline-block; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     min-width: 470px;
     min-height: 400px;
     padding: 50px 15px;
@@ -73,11 +77,3 @@ p {
 #play:active, #stop:active, #reset:active {
     transform: scale(0.95);
 }
-/* 
-#play .fa {
-    margin-right: 5px;
-}
-
-.fa-play {
-    padding-left: 5px;
-} */
