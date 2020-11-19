@@ -49,7 +49,7 @@ function checkWinner() {
     winner = board[2][0];
   }
 
-  if (winner == null && available.size() == 0) {
+  if (winner == null && available.length == 0) {
     return "tie";
   } else {
     return winner;
