@@ -13,26 +13,33 @@
     <div class="container">
          
         <div id="timer">
-            <svg width="260" height="260">
-                <circle class="defaultCircle" cx='125' cy='125' r='120' stroke='#162b8b' 
+            <svg width="300" height="300">
+                <circle class="defaultCircle" cx='150' cy='150' r='140' stroke='#162b8b' 
+                stroke-width="10" fill="none" stroke-linecap="round"/>
+                <circle id="animateCircle" cx='150' cy='150' r='140' stroke='#1C83B1' 
                 stroke-width="10" fill="none" stroke-linecap="round"/>
             </svg>
             <span id="hour">00</span> :
             <span id="min">00</span> :
-            <span id="sec">00</span>
+            <span id="sec">00</span> :
+            <span id="milisec">00</span> 
         </div>
         <!-- <p>Time Starts Here</p> -->
         <div class="buttons">
-            <a href="javascript:void(0)" id="play">
+            <a href="javascript:void(0)" id="play" onclick=playNow()>
                 <i class="fa fa-play"></i>
+                <i class="fa fa-pause"></i>
             </a>
-            <a href="javascript:void(0)" id="stop">
+            <a href="javascript:void(0)" id="stop" onclick=stopNow()>
                 <i class="fa fa-stop"></i> Stop
             </a>
-            <a href="javascript:void(0)" id="reset">
+            <a href="javascript:void(0)" id="reset" onclick=resetNow()>
                 <i class="fa fa-undo"></i>
             </a>
         </div>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="./jscript.js"></script>
 </body>
 </html>

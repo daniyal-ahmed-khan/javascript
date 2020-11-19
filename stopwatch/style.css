@@ -20,30 +20,36 @@ body {
     justify-content: center;
     align-items: center;
     min-width: 470px;
-    min-height: 400px;
+    min-height: 450px;
     padding: 50px 15px;
     background-color: #f1f1f1;
-    box-shadow: 0 5px 25px #0000004a;
+    box-shadow: 10px 20px 50px #0000004a;
     border-radius: 300px;
     text-align: center;
-    border: 1px solid red;
 }
 
 #timer {
-    border: 1px solid red;
     position: relative;
-    width: 250px;
-    height: 230px;
+    width: 300px;
+    height: 300px;
     line-height: 250px;
     font-size: 32px;
-    margin: 0 auto;
+    margin: 0px auto;
+    margin-bottom: 20px;
     background-color: #f1f1f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+#timer span {
+    font-size: 47px;
+}
 p {
     font-weight: bold;
     padding: 30px 0;
 }
+
 
 .buttons a {
     display: inline-block;
@@ -51,16 +57,14 @@ p {
     text-decoration: none;
 }
 
-.buttons {
-    border: 1px solid red;
-}
+
 #play, #reset {
     width: 65px;
     height: 65px;
     line-height: 65px;
     border-radius: 60px;
     color: #f1f1f1;
-    background: linear-gradient(45deg, #8b738b, #162b8b);
+    background: linear-gradient(45deg,  #000046,#1cb5e0);
     box-shadow: 0 8px 25px #54455505, 0 8px 25px #29272950;
     transition: all 0.1s ease;
 }
@@ -69,11 +73,39 @@ p {
     padding: 15px 20px;
     border-radius: 60px;
     color: #f1f1f1;
-    background: linear-gradient(45deg, #607d8b, #162b8b);
+    background: linear-gradient(45deg,  #000046,#1cb5e0);
     box-shadow: 0 8px 25px #bf5fc045, 0 8px 25px #25232550;
     transition: all 0.1s ease;
 }
 
 #play:active, #stop:active, #reset:active {
     transform: scale(0.95);
+}
+
+#timer svg {
+    position: absolute;
+    left : 0;
+}
+
+#animateCircle.addAnimation {
+    stroke-dasharray: 900;
+    stroke-dashoffset: -800;
+    animation: animateCircle 60s linear infinite;
+    animation-play-state: paused; /*default animation is pause*/
+}
+@keyframes animateCircle {
+    from {
+        stroke-dashoffset: 0;
+    }
+}
+.defaultCircle {
+    opacity: .3;
+}
+ .fa-play,
+.fa-pause {
+    display: none;
+}
+
+ .fa-pause {
+    display: inline-block;
 }
