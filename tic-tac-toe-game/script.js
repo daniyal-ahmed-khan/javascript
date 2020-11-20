@@ -1,6 +1,6 @@
 var origBoard;
-const huPlayer = 'O';
-const aiPlayer = 'X';
+const human = 'O';
+const computer = 'X';
 const winCombos = [
 	[0, 1, 2],
 	[3, 4, 5],
@@ -16,6 +16,8 @@ const cells = document.querySelectorAll('.cell');
 startGame();
 
 function startGame() {
+	document.getElementById('image').style.display = 'none';
+
 	document.querySelector(".endgame").style.display = "none";
 	origBoard = Array.from(Array(9).keys());
 	for (var i = 0; i < cells.length; i++) {
@@ -27,8 +29,8 @@ function startGame() {
 
 function turnClick(square) {
 	if (typeof origBoard[square.target.id] == 'number') {
-		turn(square.target.id, huPlayer)
-		if (!checkTie()) turn(bestSpot(), aiPlayer);
+		turn(square.target.id, human)
+		if (!checkTie()) turn(bestSpot(), computer);
 	}
 }
 
@@ -55,17 +57,21 @@ function checkWin(board, player) {
 function gameOver(gameWon) {
 	for (let index of winCombos[gameWon.index]) {
 		document.getElementById(index).style.backgroundColor =
-			gameWon.player == huPlayer ? "blue" : "red";
+			gameWon.player == human ? "blue" : "red";
 	}
 	for (var i = 0; i < cells.length; i++) {
 		cells[i].removeEventListener('click', turnClick, false);
 	}
-	declareWinner(gameWon.player == huPlayer ? "You win!" : "You lose.");
+	declareWinner(gameWon.player == human ? "You win!" : "You lose.");
 }
 
 function declareWinner(who) {
+	if (who == 'You win!') {
+		document.getElementById('image').style.display = 'flex';
+	}
 	document.querySelector(".endgame").style.display = "block";
 	document.querySelector(".endgame .text").innerText = who;
+	
 }
 
 function emptySquares() {
